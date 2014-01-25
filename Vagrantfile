@@ -1,5 +1,5 @@
 $script = <<SCRIPT
-#!/usr/bin/bash
+#!/bin/bash
 
 SCRIPT
 
