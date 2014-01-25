@@ -1,68 +1,82 @@
-devopsclassday Cookbook
-=======================
-TODO: Enter the cookbook description here.
+devops-classday
+===============
 
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+devops-classday documentation &amp; presentation
 
-Requirements
-------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
+----------------------------------------------
 
-e.g.
-#### packages
-- `toaster` - devopsclassday needs toaster to brown your bagel.
+# Pre-Requisites
 
-Attributes
-----------
-TODO: List you cookbook attributes here.
+## Github Account
+* https://www.github.com
+* Fork this Repo!
 
-e.g.
-#### devopsclassday::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['devopsclassday']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+## VirtualBox
+* v4.3.6
+* https://www.virtualbox.org/wiki/Downloads
+* Required
 
-Usage
------
-#### devopsclassday::default
-TODO: Write usage instructions for each cookbook.
+## Vagrant
+* v1.4.3
+* http://www.vagrantup.com/downloads.html
+* Required
 
-e.g.
-Just include `devopsclassday` in your node's `run_list`:
+## Meez
+* [meez](https://github.com/paulczar/meez)
+* Not Required, but good for bootstrapping chef cookbooks
 
-```json
-{
-  "name":"my_node",
-  "run_list": [
-    "recipe[devopsclassday]"
-  ]
-}
+----------------------------------------------
+
+# Session One - Local Development Environment
+## Vagrant Setup
+```bash
+git clone git://github.com/{YOURGITHUBACCOUNT}/devops-classday.git
+cd devops-classday
+vagrant up {centos6|saucy}
+vagrant ssh {centos6|saucy}
 ```
 
-Contributing
-------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
+----------------------------------------------
 
-e.g.
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
+# Session Two - Environment Automation with Chef
+## Chef-Zero
+* It's chef-lite!
+* Makes working with encrypted data bags a breeze
+* No need to install chef-solo-search on everything
 
-License and Authors
--------------------
-Authors: TODO: List authors
+## Berkshelf
+* http://berkshelf.com/
+* Manages your cookbook dependencies
+
+```bash
+apt-get install ruby-dev
+vagrant plugin install vagrant-berkshelf
+vagrant plugin install vagrant-omnibus
+vagrant plugin install vagrant-chef-zero
+meez -l apachev2 -C "Alex Corley" -m acorley@anthroprose.com -o ./ devopsclassday
+mv devopsclassday/* ./
+rmdir devopsclassday
+```
+
+----------------------------------------------
+
+# Session Three - Modern Web App
+## Nginx
+* http://nginx.org/en/download.html
+* https://github.com/opscode-cookbooks/nginx
+
+## uWSGI
+* https://uwsgi-docs.readthedocs.org/en/latest/
+* https://github.com/50onRed/uwsgi - but this one sucks, so we're going to hack our own depending on ubuntu or centos
+
+## Python/PHP
+* Backed by UNIX Socket or TCP/IP
+
+----------------------------------------------
+
+# Session Four - Continuous Integration
+* [Travis-CI](https://travis-ci.org/)
+* [Jenkins](http://jenkins-ci.org/)
+* [Test Kitchen](http://kitchen.ci/)
+* Github Deploy Keys
+
