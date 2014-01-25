@@ -7,6 +7,10 @@ devops-classday documentation &amp; presentation
 
 # Pre-Requisites
 
+## Github Account
+* https://www.github.com
+* Fork this Repo!
+
 ## VirtualBox
 * v4.3.6
 * https://www.virtualbox.org/wiki/Downloads
@@ -30,7 +34,7 @@ apt-get install ruby-dev
 vagrant plugin install vagrant-berkshelf
 vagrant plugin install vagrant-omnibus
 vagrant plugin install vagrant-chef-zero
-git clone git://github.com/anthroprose/devops-classday.git
+git clone git://github.com/{YOURGITHUBACCOUNT}/devops-classday.git
 cd devops-classday
 vagrant up
 ```
