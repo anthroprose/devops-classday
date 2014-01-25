@@ -44,6 +44,10 @@ vagrant ssh {centos6|saucy}
 * Makes working with encrypted data bags a breeze
 * No need to install chef-solo-search on everything
 
+## Berkshelf
+* http://berkshelf.com/
+* Manages your cookbook dependencies
+
 ```bash
 apt-get install ruby-dev
 vagrant plugin install vagrant-berkshelf
@@ -64,6 +68,9 @@ rmdir devopsclassday
 ## uWSGI
 * https://uwsgi-docs.readthedocs.org/en/latest/
 * https://github.com/50onRed/uwsgi - but this one sucks, so we're going to hack our own depending on ubuntu or centos
+
+## Python/PHP
+* Backed by UNIX Socket or TCP/IP
 
 ----------------------------------------------
 
