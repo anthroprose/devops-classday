@@ -11,7 +11,7 @@ devops-classday documentation &amp; presentation
 * v4.3.6
 * https://www.virtualbox.org/wiki/Downloads
 * Required
-* 
+
 ## Vagrant
 * v1.4.3
 * http://www.vagrantup.com/downloads.html
