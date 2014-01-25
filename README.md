@@ -64,3 +64,11 @@ rmdir devopsclassday
 ## uWSGI
 * https://uwsgi-docs.readthedocs.org/en/latest/
 * https://github.com/50onRed/uwsgi - but this one sucks, so we're going to hack our own depending on ubuntu or centos
+
+----------------------------------------------
+
+# Session Four - Continuous Integration
+* [Travis-CI](https://travis-ci.org/)
+* [Jenkins](http://jenkins-ci.org/)
+* [Test Kitchen](http://kitchen.ci/)
+* Github Deploy Keys
