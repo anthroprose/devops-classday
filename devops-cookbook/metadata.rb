@@ -1,5 +1,5 @@
 # Encoding: utf-8
-name             'devopsclassday'
+name             'devops-cookbook'
 maintainer       'Alex Corley'
 maintainer_email 'acorley@anthroprose.com'
 license          'Apache 2.0'
