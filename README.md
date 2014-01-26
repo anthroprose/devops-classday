@@ -7,21 +7,24 @@ devops-classday documentation &amp; presentation
 
 # Pre-Requisites
 
-## Github Account
+## Common
+
+### Github Account
 * https://www.github.com
 * Fork this Repo!
 
-## VirtualBox
+### VirtualBox
 * v4.3.6
 * https://www.virtualbox.org/wiki/Downloads
 * Required
 
-## Vagrant
+### Vagrant
 * v1.4.3
 * http://www.vagrantup.com/downloads.html
 * Required
 
-## Meez
+## Chef Based Provisioning
+### Meez
 * [meez](https://github.com/paulczar/meez)
 * Not Required, but good for bootstrapping chef cookbooks
 
@@ -79,4 +82,3 @@ rmdir devopsclassday
 * [Jenkins](http://jenkins-ci.org/)
 * [Test Kitchen](http://kitchen.ci/)
 * Github Deploy Keys
-
