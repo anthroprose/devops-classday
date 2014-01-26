@@ -73,9 +73,16 @@ vagrant ssh {centos6|saucy}
 ## uWSGI
 * https://uwsgi-docs.readthedocs.org/en/latest/
 * https://github.com/50onRed/uwsgi - but this one sucks, so we're going to hack our own depending on ubuntu or centos
+* Only needed for application not running their own webserver already, CLI execution instead of inside of the webserver
 
 ## Python/PHP
 * Backed by UNIX Socket or TCP/IP
+* This piece could also be a Tomcat app or anything else exposing a TCP/IP port
+
+```bash
+apt-get install -y nginx php5-cgi php5-cli uwsgi
+service nginx start
+```
 
 ----------------------------------------------
 
