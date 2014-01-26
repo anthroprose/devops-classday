@@ -1,11 +1,9 @@
-$script = <<SCRIPT
-#!/bin/bash
-apt-get update
-apt-get install -y git nginx uwsgi php5-cgi php5-cli
-SCRIPT
-
 Vagrant.configure("2") do |config|
 
+  config.berkshelf.enabled = true
+  config.omnibus.chef_version = :latest
+  config.chef_zero.enabled = true
+  
   config.vm.define :centos6 do |centos6|
     centos6.vm.box      = 'opscode-centos-6.5'
     centos6.vm.box_url  = 'http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.5_chef-provisionerless.box'
@@ -24,7 +22,22 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |v|
     v.customize ["modifyvm", :id, "--memory", 1024]
   end
-
-  config.vm.provision "shell", inline: $script
+  
+  config.vm.provision :chef_client do |chef|
+    
+    chef.log_level = :info
+    
+    chef.json = {
+                "nginx" => {
+                        "default_domain" => "localhost",
+                        "default_site_enabled" => false
+                }
+    }
+    
+    chef.run_list = [
+      "recipe[devops-cookbook]"
+    ]
+    
+  end
 
 end

@@ -1,4 +1,7 @@
 .vagrant
+.project
+.zero-knife.rb
+
 Berksfile.lock
 *~
 *#
