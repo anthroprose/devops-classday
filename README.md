@@ -51,14 +51,16 @@ vagrant ssh {centos6|saucy}
 * http://berkshelf.com/
 * Manages your cookbook dependencies
 
+Make sure to destroy any previous vagrant boxes that may be running before reusing box names in other examples.
+
 ```bash
 apt-get install ruby-dev
 vagrant plugin install vagrant-berkshelf
 vagrant plugin install vagrant-omnibus
 vagrant plugin install vagrant-chef-zero
-meez -l apachev2 -C "Alex Corley" -m acorley@anthroprose.com -o ./ devopsclassday
-mv devopsclassday/* ./
-rmdir devopsclassday
+cd devops-cookbook
+vagrant up {centos6|saucy}
+vagrant ssh {centos6|saucy}
 ```
 
 ----------------------------------------------
